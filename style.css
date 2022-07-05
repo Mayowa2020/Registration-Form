@@ -7,32 +7,22 @@
 }
 
 body {
-	background-color: rgb(14, 14, 14);
+	background-color: black;
 	color: white;
 	font-family: "Poppins", sans-serif;
 }
 
 main {
-	background-color: hsl(0, 100%, 74%);
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 80vh;
 	align-items: center;
-	margin: 0 auto;
-	height: 100vh;
-	width: 70%;
-}
-
-.leftbar {
-	padding-left: 5rem;
-	/* margin-right: 1rem; */
-}
-
-.rightbar {
-	padding-left: 1rem;
-}
-
-.leftbar,
-.rightbar {
-	width: 45%;
+	justify-items: center;
+	background-color: hsl(0, 100%, 74%);
+	width: 80%;
+	margin: 2rem auto;
+	padding: 2rem 7rem;
+	column-gap: 3rem;
 }
 
 form,
@@ -47,13 +37,14 @@ button {
 	padding: 0.5rem;
 	border-radius: 0.5rem;
 	width: 80%;
-	margin: 0.3rem 3rem;
+	margin: 0.3rem 10%;
 }
 
 button {
 	background-color: hsl(154, 59%, 51%);
 	color: white;
 	font-weight: 700;
+	cursor: pointer;
 }
 
 form p {
@@ -87,4 +78,28 @@ p.top-text {
 form {
 	padding: 2rem 0;
 	border-radius: 0.5rem;
+}
+
+input:focus:invalid {
+	outline: none;
+	border: 1px solid red;
+}
+
+@media only screen and (max-width: 600px) {
+	main {
+		height: 100%;
+		width: 100%;
+		display: block;
+		padding: 1rem;
+		text-align: center;
+	}
+
+	main .leftbar {
+		margin-bottom: 4rem;
+		text-align: center;
+	}
+
+	.bottom-text {
+		margin: 0 1rem;
+	}
 }
